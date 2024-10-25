@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+4x4 multiplier using structural verilog
 
 ![Block Diagram]("diagram.png")
 
