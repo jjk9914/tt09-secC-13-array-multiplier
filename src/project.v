@@ -19,21 +19,21 @@ module tt_um_c13_array_mult (
   // All output pins must be assigned. If not used, assign to 0.
     wire [3:0] sum0, sum1, sum2, sum3, sum4, sum5, sum6;
     wire [3:0] c0, c1, c2, c3, c4, c5, c6;
-    assign m[3:0] = ui_in[7:4];
-    assign q[3:0] = ui_in[3:0];
-    Node1 node0(c0[0], sum0[0], m[0], q[0], 0, 0);
-    Node1 node1(c1[0], sum1[0], m[1], q[0], c0[0], 0);
-    Node1 node2(c2[0], sum2[0], m[2], q[0], c1[0], 0);
-    Node1 node3(c3[0], sum3[0], m[3], q[0], c2[0], 0);
-    Node1 node4(c1[1], sum1[1], m[0], q[1], 0, sum1[0]);
+    assign q = ui_in[3:0];
+    assign m = ui_in[7:4];
+    Node1 node0(c0[0], sum0[0], m[0], q[0], 1b'0, 1b'0);
+    Node1 node1(c1[0], sum1[0], m[1], q[0], c0[0], 1'b0);
+    Node1 node2(c2[0], sum2[0], m[2], q[0], c1[0], 1'b0);
+    Node1 node3(c3[0], sum3[0], m[3], q[0], c2[0], 1'b0);
+    Node1 node4(c1[1], sum1[1], m[0], q[1], 1'b0, sum1[0]);
     Node1 node5(c2[1], sum2[1], m[1], q[1], c1[1], sum2[0]);
     Node1 node6(c3[1], sum3[1], m[2], q[1], c2[1], sum3[0]);
     Node1 node7(c4[1], sum4[1], m[3], q[1], c3[1], c3[0]);
-    Node1 node8(c2[2], sum2[2], m[0], q[2], 0, sum2[1]);
+    Node1 node8(c2[2], sum2[2], m[0], q[2], 1'b0, sum2[1]);
     Node1 node9(c3[2], sum3[2], m[1], q[2], c2[2], sum3[1]);
     Node1 node10(c4[2], sum4[2], m[2], q[2], c3[2], sum4[1]);
     Node1 node11(c5[2], sum5[2], m[3], q[2], c4[2], c4[1]);
-    Node1 node12(c3[3], sum3[3], m[0], q[3], 0, sum3[2]);
+    Node1 node12(c3[3], sum3[3], m[0], q[3], 1'b0, sum3[2]);
     Node1 node13(c4[3], sum4[3], m[1], q[3], c3[3], sum4[2]);
     Node1 node14(c5[3], sum5[3], m[2], q[3], c4[3], sum5[2]);
     Node1 node15(c6[3], sum6[3], m[3], q[3], c5[3], c5[2]);
@@ -46,7 +46,7 @@ module tt_um_c13_array_mult (
     assign uo_out[5] = sum5[3];
     assign uo_out[6] = sum6[3];
     assign uo_out[7] = c6[3];
-  assign uio_oe  = 0;
+    assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, uio_out, uio_in, 1'b0};
