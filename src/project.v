@@ -19,9 +19,9 @@ module tt_um_c13_array_mult (
   // All output pins must be assigned. If not used, assign to 0.
     wire [3:0] sum0, sum1, sum2, sum3, sum4, sum5, sum6;
     wire [3:0] c0, c1, c2, c3, c4, c5, c6;
-    assign wire m = ui_in [7:4];
-    assign wire q = ui_in [3:0];
-    Node1 node0(c0[0], sum0[0],m[0], q[0], 0, 0);
+    assign m = ui_in [7:4];
+    assign q = ui_in [3:0];
+    Node1 node0(c0[0], sum0[0], m[0], q[0], 0, 0);
     Node1 node1(c1[0], sum1[0], m[1], q[0], c0[0], 0);
     Node1 node2(c2[0], sum2[0], m[2], q[0], c1[0], 0);
     Node1 node3(c3[0], sum3[0], m[3], q[0], c2[0], 0);
@@ -49,7 +49,7 @@ module tt_um_c13_array_mult (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, uio_out, 1'b0};
+  wire _unused = &{ena, clk, rst_n, uio_out, uio_in, 1'b0};
 
 endmodule
 
