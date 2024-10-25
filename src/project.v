@@ -47,7 +47,7 @@ module tt_um_c13_array_mult (
     assign uo_out[5] = sum5[3];
     assign uo_out[6] = sum6[3];
     assign uo_out[7] = c6[3];
-    assign uio_oe = 0
+    assign uio_oe = 0;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, uio_out, uio_in, 1'b0};
