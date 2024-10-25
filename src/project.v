@@ -6,7 +6,7 @@
 `default_nettype none
 
 module tt_um_c13_array_mult (
-    input  wire [7:0] ui_in   // Dedicated inputs
+    input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
     output wire [7:0] uio_out,  // IOs: Output path
@@ -21,22 +21,22 @@ module tt_um_c13_array_mult (
     wire [3:0] c0, c1, c2, c3, c4, c5, c6;
     assign m = ui_in [7:4];
     assign q = ui_in [3:0];
-    Node1 node0(c0[0], sum0[0],ui_in[0], q[0], 0, 0);
-    Node1 node1(c1[0], sum1[0], ui_in[1], q[0], c0[0], 0);
-    Node1 node2(c2[0], sum2[0], ui_in[2], q[0], c1[0], 0);
-    Node1 node3(c3[0], sum3[0], ui_in[3], q[0], c2[0], 0);
-    Node1 node4(c1[1], sum1[1], ui_in[0], q[1], 0, sum1[0]);
-    Node1 node5(c2[1], sum2[1], ui_in[1], q[1], c1[1], sum2[0]);
-    Node1 node6(c3[1], sum3[1], ui_in[2], q[1], c2[1], sum3[0]);
-    Node1 node7(c4[1], sum4[1], ui_in[3], q[1], c3[1], c3[0]);
-    Node1 node8(c2[2], sum2[2], ui_in[0], q[2], 0, sum2[1]);
-    Node1 node9(c3[2], sum3[2], ui_in[1], q[2], c2[2], sum3[1]);
-    Node1 node10(c4[2], sum4[2], ui_in[2], q[2], c3[2], sum4[1]);
-    Node1 node11(c5[2], sum5[2], ui_in[3], q[2], c4[2], c4[1]);
-    Node1 node12(c3[3], sum3[3], ui_in[0], q[3], 0, sum3[2]);
-    Node1 node13(c4[3], sum4[3], ui_in[1], q[3], c3[3], sum4[2]);
-    Node1 node14(c5[3], sum5[3], ui_in[2], q[3], c4[3], sum5[2]);
-    Node1 node15(c6[3], sum6[3], ui_in[3], q[3], c5[3], c5[2]);
+    Node1 node0(c0[0], sum0[0],m[0], q[0], 0, 0);
+    Node1 node1(c1[0], sum1[0], m[1], q[0], c0[0], 0);
+    Node1 node2(c2[0], sum2[0], m[2], q[0], c1[0], 0);
+    Node1 node3(c3[0], sum3[0], m[3], q[0], c2[0], 0);
+    Node1 node4(c1[1], sum1[1], m[0], q[1], 0, sum1[0]);
+    Node1 node5(c2[1], sum2[1], m[1], q[1], c1[1], sum2[0]);
+    Node1 node6(c3[1], sum3[1], m[2], q[1], c2[1], sum3[0]);
+    Node1 node7(c4[1], sum4[1], m[3], q[1], c3[1], c3[0]);
+    Node1 node8(c2[2], sum2[2], m[0], q[2], 0, sum2[1]);
+    Node1 node9(c3[2], sum3[2], m[1], q[2], c2[2], sum3[1]);
+    Node1 node10(c4[2], sum4[2], m[2], q[2], c3[2], sum4[1]);
+    Node1 node11(c5[2], sum5[2], m[3], q[2], c4[2], c4[1]);
+    Node1 node12(c3[3], sum3[3], m[0], q[3], 0, sum3[2]);
+    Node1 node13(c4[3], sum4[3], m[1], q[3], c3[3], sum4[2]);
+    Node1 node14(c5[3], sum5[3], m[2], q[3], c4[3], sum5[2]);
+    Node1 node15(c6[3], sum6[3], m[3], q[3], c5[3], c5[2]);
     
     assign uo_out[0] = sum0[0];
     assign uo_out[1] = sum1[1];
