@@ -21,7 +21,7 @@ module tt_um_c13_array_mult (
     wire [3:0] c0, c1, c2, c3, c4, c5, c6;
     assign q = ui_in[3:0];
     assign m = ui_in[7:4];
-    Node1 node0(c0[0], sum0[0], m[0], q[0], 1b'0, 1b'0);
+    Node1 node0(c0[0], sum0[0], m[0], q[0], 1'b0, 1'b0);
     Node1 node1(c1[0], sum1[0], m[1], q[0], c0[0], 1'b0);
     Node1 node2(c2[0], sum2[0], m[2], q[0], c1[0], 1'b0);
     Node1 node3(c3[0], sum3[0], m[3], q[0], c2[0], 1'b0);
