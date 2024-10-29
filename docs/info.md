@@ -11,11 +11,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 4x4 multiplier using structural verilog
 
-![Block Diagram]("diagram.png")
+![Block Diagram](diagram.png)
 
 ## How to test
 
-test with multiplication
+Test cases for inputs m and q should result in the expected product value of p 
 
 ## External hardware
 
