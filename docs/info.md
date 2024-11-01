@@ -9,14 +9,15 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-4x4 multiplier using structural verilog
+4x4 multiplier using structural verilog. The structure of the 4x4 multiplier array that the exercise should emulate is shown below in the diagram. This multiplies two 4-bit inputs, ‘m’ and ‘q’ in this case, to an 8-bit product, ‘p’. The code takes each consecutive bit of q and cascades it along the first bit of m. From there, full adders are used to combine each bit's value. 
 
-![Block Diagram](diagram.png)
+![diagram](https://github.com/user-attachments/assets/b689128b-e498-4c8d-99c9-6306ffc3339d)
+
 
 ## How to test
 
-Test cases for inputs m and q should result in the expected product value of p 
+Test cases for inputs m and q should result in the expected product value of p. The test cases in the test python compilation essentially declare two values that should be multiplied and the predicted correct output of the multiplication. To test the functionality, access the test/README.md file.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+N/A
