@@ -11,7 +11,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 4x4 multiplier using structural verilog. The structure of the 4x4 multiplier array that the exercise should emulate is shown below in the diagram. This multiplies two 4-bit inputs, ‘m’ and ‘q’ in this case, to an 8-bit product, ‘p’. The code takes each consecutive bit of q and cascades it along the first bit of m. From there, full adders are used to combine each bit's value. 
 
-![Block Diagram](diagram.png)
+![diagram](https://github.com/user-attachments/assets/b689128b-e498-4c8d-99c9-6306ffc3339d)
+
 
 ## How to test
 
